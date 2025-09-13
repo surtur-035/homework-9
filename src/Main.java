@@ -1,10 +1,12 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
 
         System.out.println("Задача 1");
         int[] monthlyExpenses = {15000, 20000, 40000, 33000, 25000};
         int allMonthlyExpenses = 0;
-        for (int i = 0; i < monthlyExpenses.length; i++) {
+         for (int i = 0; i < monthlyExpenses.length; i++) {
             allMonthlyExpenses += monthlyExpenses[i];
         }
         System.out.println("Сумма трат за месяц составила " + allMonthlyExpenses + " рублей");
@@ -34,8 +36,12 @@ public class Main {
 
         System.out.println("Задача 4");
         char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i = reverseFullName.length - 1; i >= 0; i--) {
-            System.out.print(reverseFullName[i]);
+        for (int i = 0; i < reverseFullName.length / 2; i++) {
+            char temp = reverseFullName[i];
+            reverseFullName[i] = reverseFullName[reverseFullName.length - 1 - i];
+            reverseFullName[reverseFullName.length - 1 - i] = temp;
         }
+        System.out.println(reverseFullName);
+        System.out.println(Arrays.toString(reverseFullName));
     }
 }
